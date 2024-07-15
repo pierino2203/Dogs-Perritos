@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.lista{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+}
+.card{
+  border: 1px solid;
+  text-decoration: none; /* Quitar la decoración de texto */
+  color: inherit; /* Heredar el color del texto del contenedor padre */
+  cursor: pointer; 
+}
+.navlink{
+  text-decoration: none;
+  color: inherit;
+}
+

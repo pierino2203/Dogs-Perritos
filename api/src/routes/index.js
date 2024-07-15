@@ -70,8 +70,18 @@ const getDbInfo = async () => {
 const getAllDogs = async () => {
   try {
     const api = await getApiInfo();
+    const final = await Promise.all(
+      api.map(async e => {
+        const response = await axios.get(`https://api.thedogapi.com/v1/images/${e.imgReference}`);
+        const image = response.data;
+        return {
+          ...e,
+          img: image.url
+        };
+      })
+    );
     const db = await getDbInfo();
-    const infoTotal = api.concat(db);
+    const infoTotal = final.concat(db);
     return infoTotal;
 
   } catch (error) {

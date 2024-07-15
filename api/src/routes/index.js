@@ -13,7 +13,7 @@ const router = Router();
 // Ejemplo: router.use('/auth', authRouter);
 const getApiInfo = async () => {
   try {
-    const apiUrl = await axios.get('https://api.thedogapi.com/v1/breeds');
+    const apiUrl = await axios.get('https://api.thedogapi.com/v1/breeds?limit=100');
     const apiInfo = await apiUrl.data.map(d => {
       return {
         id: d.id,

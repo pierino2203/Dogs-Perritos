@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, NavLink } from 'react-router-dom';
-import { getDogs, filterCreated, orderByName, orderByWeight, filterDogsByTemperaments, getTemperaments } from '../redux/actions';
+import {  NavLink } from 'react-router-dom';
+import { getDogs, getTemperaments } from '../redux/actions';
 import Card from './Card';
 import Paginado from './Paginado';
 import SearchBar from './SearchBar';
@@ -11,13 +11,13 @@ import style from '../styles/Home.module.css'
 export default function Home() {
   const dispatch = useDispatch();
   const allDogs = useSelector((state) => state.dogs);
-  const temperaments = useSelector((state) => state.temperaments)
+  // const temperaments = useSelector((state) => state.temperaments)
   const [currentPage, setCurrentPage] = useState(1);
   const [dogsPerPage, setDogsPerPage] = useState(8);
   const indexOfLastDog = currentPage * dogsPerPage;
   const indexOfFirstDog = indexOfLastDog - dogsPerPage;
   const currentDogs = allDogs.slice(indexOfFirstDog, indexOfLastDog);
-  const [orden, setOrden] = useState('');
+  // const [orden, setOrden] = useState('');
 
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber)
@@ -28,33 +28,33 @@ export default function Home() {
 
   }, [dispatch]);
 
-  function handleClick(e) {
-    e.preventDefault();
-    dispatch(getDogs());
-  }
+  // function handleClick(e) {
+  //   e.preventDefault();
+  //   dispatch(getDogs());
+  // }
 
-  function handleFilterCreated(e) {
-    e.preventDefault();
-    dispatch(filterCreated(e.target.value))
-  }
+  // function handleFilterCreated(e) {
+  //   e.preventDefault();
+  //   dispatch(filterCreated(e.target.value))
+  // }
 
-  function handleOrderByName(e) {
-    e.preventDefault();
-    dispatch(orderByName(e.target.value))
-    setCurrentPage(1);
-    setOrden(`Ordenado ${e.target.value}`);
-  }
+  // function handleOrderByName(e) {
+  //   e.preventDefault();
+  //   dispatch(orderByName(e.target.value))
+  //   setCurrentPage(1);
+  //   setOrden(`Ordenado ${e.target.value}`);
+  // }
 
-  function handleOrderByWeight(e) {
-    e.preventDefault();
-    dispatch(orderByWeight(e.target.value))
-    setCurrentPage(1);
-    setOrden(`Ordenado ${e.target.value}`);
-  }
-  function handleFilterTemperament(e) {
+  // function handleOrderByWeight(e) {
+  //   e.preventDefault();
+  //   dispatch(orderByWeight(e.target.value))
+  //   setCurrentPage(1);
+  //   setOrden(`Ordenado ${e.target.value}`);
+  // }
+  // function handleFilterTemperament(e) {
 
-    dispatch(filterDogsByTemperaments(e.target.value));
-  }
+  //   dispatch(filterDogsByTemperaments(e.target.value));
+  // }
   return (
     <div>
       <NavBar />

@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 import { useEffect } from "react";
 import { getDogDetail, cleanDetail } from "../redux/actions/index";
 import style from '../styles/DogDetail.module.css'
-import altura from '../images/pngwing.com.png'
-import vida from '../images/corazon.png.png'
-import peso from '../images/peso.png.png'
 import load from '../images/load.gif';
 import NavBar from "./NavBar";
 
@@ -15,7 +12,7 @@ export default function DogDetail(props) {
   useEffect(() => {
     dispatch(getDogDetail(props.match.params.id))
     return () => dispatch(cleanDetail())
-  }, [dispatch]);
+  }, [dispatch,props.match.params.id]);
   const myDog = useSelector((state) => state.detail);
 
   return (
@@ -57,7 +54,7 @@ export default function DogDetail(props) {
 
           </div>
           : <div className={style.loading}>
-            <img src={load} />
+            <img src={load} alt="Imagen de espera" />
             <br />
             <p>Loading...</p>
           </div>

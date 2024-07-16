@@ -1,7 +1,6 @@
 import axios from "axios";
 import swal from "sweetalert";
 
-const ruta = "https://dogs-perritos.onrender.com";
 export function getDogs() {
     return async function(dispatch) {
       try {

@@ -13,7 +13,7 @@ export default function Home() {
   const allDogs = useSelector((state) => state.dogs);
   const temperaments = useSelector((state) => state.temperaments)
   const [currentPage, setCurrentPage] = useState(1);
-  const [dogsPerPage, setDogsPerPage] = useState(9);
+  const [dogsPerPage, setDogsPerPage] = useState(8);
   const indexOfLastDog = currentPage * dogsPerPage;
   const indexOfFirstDog = indexOfLastDog - dogsPerPage;
   const currentDogs = allDogs.slice(indexOfFirstDog, indexOfLastDog);
@@ -99,6 +99,7 @@ export default function Home() {
             </select>
           </div>
         </aside> */}
+        <SearchBar/>
           <ul className={style.lista}> {currentDogs?.map(el => {
             return (
               <div className={style.card} >
@@ -116,12 +117,14 @@ export default function Home() {
             )
           })}
           </ul>
+          <div className={style.conteinerPaginado}>
           <Paginado
-            className={style.conteinerPaginado}
+            
             dogsPerPage={dogsPerPage}
             allDogs={allDogs.length}
             paginado={paginado}
           />
+          </div>
 
       </div>
     </div>

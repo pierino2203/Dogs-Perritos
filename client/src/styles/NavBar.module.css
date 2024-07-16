@@ -1,24 +1,26 @@
-.navbar{
+.navbar {
   display: flex;
   justify-content: space-between;
   height: 69px;
   background-color: #e7ae38;
-  
-}
-.dogImage{
-  width: 60px;
-  height: auto;
-  
-  
-}
-.buttonImage{
+  width: 100%;
 
 }
-.listNav{
+
+.listNav {
   list-style: none;
+  margin-right: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
-.listContainer{
+.listNav a {
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
+
+.listContainer {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -26,40 +28,29 @@
   grid-gap: 2rem;
   gap: 2rem;
 }
-.conteiner{
+
+.conteiner {
   display: flex;
   width: 34%;
 }
 
-.button{
-  border-radius: 8px;
-    width: 119px;
-    height: 37px;
-    background-color: #fbce27;
-    cursor: pointer;
+.button {
+  background-color: rgba(247, 228, 144, 1);
+  cursor: pointer;
 }
-.button:hover{
-  color: #3c3d15bb;
+
+.listNav:hover {
   background-color: #f5e2a4;
+  color: #3c3d15bb;
 }
-.containerInput{
-  align-items: center;
-  display: flex;
-}
-.input{
-  padding: 21px;
-}
-.logo{
+
+.logo {
   width: 62px;
   margin: 2px 23px;
 }
-.title{
-  float: right;
-  margin: 12px 10px 10px 10px;
-  color: -webkit-link;
-  cursor: pointer;
-  text-decoration: underline;
-}
-.titleH1{
 
+@media (max-width: 576px) {
+  .listNav {
+    display: none;
+  }
 }

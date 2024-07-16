@@ -1,87 +1,55 @@
 .conteninerDetail{
-  display: inline-block;
-  grid-template-columns: .9fr 1fr;
-  width: 70rem;
-  min-height: 50rem;
-  padding: 1rem;
-  grid-gap: 1rem rem;
-  gap: 1rem;
-  background: #00000036;
-  border-radius: 82px;
-}
-.imageDetail{
-  width: 486px;
-  border-radius: 82px;
-}
-.title{
   display: flex;
-  flex-direction: center;
-  justify-content: space-evenly;
-  flex-wrap: nowrap;
-  border-color: black;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 20px #fff, 0 0 30px #fff,
-  0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff;
-  border: solid 3px;
-  border-radius: 16px;
-  margin: 18px 328px;
-  height: 50px;
-  background-color: #ffb401;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 0px;
+  margin: 0px;
 }
-.div1{
-  margin: 106px 124px 304px 27px;
+.containet__img {
+  width: 50%;
 }
-
-.div2{
-  margin: -3px 48px 19px 54px;
-  float: left;
-  border-radius: 43px;
+.containet__img img{
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
 }
-.divDetail{
-  float: right;
+.container__text{
+  width: 40%;
 }
-
-.iconos{
-  width: 60px;
+.texto__container h1{
+  text-align: start;
 }
-.conteninerInfo{
-  margin: 35px -93px 29px 601px;
-  border: solid;
-  border-radius: 25px;
-  background-color: #ffb401;
-}
-
-.conteinderIco{
+.container__altura{
   display: flex;
-    align-content: center;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 19px;
-    border: solid 2px;
-    border-radius: 10px;
-    margin: 37px 58px;
+  justify-content: start;
+  align-items: center;
+  gap: 4rem;
 }
-.conteinerCorazon{
-  margin: 10px -12px;
-}
-.temperament{
-  margin: -408px 549px -29px 81px;
-  border: solid 2px;
-  border-radius: 25px;
-  background-color: #ffb401;
-}
-.contButton{
-  margin: 95px 0px 0px 0px;
+.contButton button{
+  background-color: #e7ae38;
+  width: 10%;
+  height: 1.5rem;
+  color: white;
+  border: none;
 }
 
-.button{
-  border-radius: 8px;
-    width: 119px;
-    height: 37px;
-    background-color: #fbce27;
-    cursor: pointer;
-}
-.button:hover{
-  color: #3c3d15bb;
-  background-color: #f5e2a4;
+@media (max-width: 576px){
+  .containet__img {
+    width: 100%;
+  }
+  .container__text{
+    width: 90%;
+    font-size: 10px;
+    gap: 0px;
+  }
+  .container__altura{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 2rem;
+  }
 }

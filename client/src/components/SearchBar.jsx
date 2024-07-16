@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getNameDogs } from "../redux/actions";
 import style from '../styles/SearchBar.module.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
 export default function SearchBar()  {
   const dispatch = useDispatch();
@@ -27,7 +29,7 @@ export default function SearchBar()  {
         placeholder="Enter name"
         onChange={(e)=> handleInputChange(e)}
       />
-      <button className={style.button} type='submit' onClick={(e)=>handleSubmit(e)}>Search</button>
+      <button className={style.button} type='submit' onClick={(e)=>handleSubmit(e)}><FontAwesomeIcon icon={faGlobe} /></button>
     </div>
   )
 
